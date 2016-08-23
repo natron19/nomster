@@ -20,7 +20,7 @@ class PlacesController < ApplicationController
     if @place.save
       redirect_to root_path, notice: "Place successfully added."
     else
-      render 'new'
+      render 'new', status: :unprocessable_entity
     end
   end
 
@@ -41,7 +41,7 @@ class PlacesController < ApplicationController
     if @place.update_attributes(place_params)
       redirect_to root_path, notice: "Place successfully updated."
     else
-      render 'edit'
+      render :edit, status: :unprocessable_entity
     end
   end
 
