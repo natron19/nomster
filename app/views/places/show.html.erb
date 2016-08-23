@@ -5,14 +5,14 @@
   <br/><br/>
   <p><%= @place.description %></p>
   <br />
-  <% if @place.user.present? %>
-    <small>Added by <%= @place.user.email %></small>
-    <br />
+  <small>Added by <%= @place.user.email %></small>
+  <br />
+
+  <div class="pull-right">
+  <% if current_user && @place.user == current_user %>
+      <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
+      <%= link_to 'Destroy', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'},class: 'btn btn-danger' %>
   <% end %>
 
-  <% if @place.user = current_user %>
-    <div class="pull-right">
-      <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
-    </div>
-  <% end %>
+   </div>
 </div>
