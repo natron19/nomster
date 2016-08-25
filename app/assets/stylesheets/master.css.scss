@@ -71,3 +71,17 @@ blockquote:before {
 blockquote p {
   display: inline;
 }
+
+.main_img {
+    height: auto;
+    width: auto;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.thumb_img {
+    height: auto;
+    width: auto;
+    max-width: 50px;
+    max-height: 50px;
+}

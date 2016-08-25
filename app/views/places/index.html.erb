@@ -10,6 +10,20 @@
       <small>Added by <%= place.user.email %></small>
     <% end %>
 
+    <div class="col-xs-12">
+      <div class="row">
+        <% if place.photos.present? %>
+          <% place.photos.each do |photo| %>
+
+                <% if photo.present? %>
+                  <%= image_tag photo.picture, class:"thumb_img" %>
+                <% end %>
+
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
     <% if place.comments.present? %>
       <div class="col-xs-12">
         <blockquote>
