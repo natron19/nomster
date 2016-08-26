@@ -17,7 +17,8 @@ class PlacesController < ApplicationController
   end
 
   def create
-    @place = current_user.places.create(place_params)
+    @place = current_user.places.build(place_params)
+    @place = Place.new(place_params.merge({ user_id: current_user.id }))
 
     if @place.save
       redirect_to root_path, notice: "Place successfully added."
