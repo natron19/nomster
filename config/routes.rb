@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :photos, only: :create
   end
 
+  resources :users, only: :show
+
   root 'places#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
