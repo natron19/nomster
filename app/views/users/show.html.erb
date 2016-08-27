@@ -43,6 +43,24 @@
 
 <div class="clear"></div>
 
+<div class="booyah-box col-xs-10 col-xs-offset-1">
+  <br/><br/>
+  <h1 class="text-center">My Photos</h1>
+  <br/><br/>
+  <% @user.photos.each do |photo| %>
+    <div class="col-xs-12 col-sm-6">
+        <% if photo.present? %>
+
+          <b><%= image_tag photo.picture, class:"main_img" %></b>
+        <% end %>
+        <br />
+        <%= photo.caption %>
+    </div>
+  <% end %>
+</div>
+
+<div class="clear"></div>
+
 <br/><br/>
 <h1 class="text-center">My Comments</h1>
 <br/><br/>
